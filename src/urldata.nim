@@ -1,12 +1,12 @@
 #[
-    urldata module
+urldata module
 
 This is a module defines the endpoints for the REST SpaceX API
 as well as some global data
 
 ]#
 
- # Base URL from which to assemble request URLs #
+ # Base URL from which to assemble request URLs 
 var base* = "https://api.spacexdata.com"
 
 # API Version #
@@ -15,22 +15,25 @@ var main* = base & "/" & version & "/"
 
 # Declaration of the endpoints
 
-# Capsule Information #
+# Capsule Information 
 var main_capsules* = "capsules"
 var upcoming_capsules* = main_capsules & "/upcoming"
 var past_capsules* = main_capsules & "/past"
 
-# Company/API information #
+# Company/API information 
 var main_info* = "info"
 var main_api* = ""
 
-# Cores Information #
+# Cores Information 
 var main_cores* = "cores"
 var upcoming_cores* = main_cores & "/upcoming"
 var past_cores* = main_cores & "/past"
 
-# Crew Information #
+# Crew Information 
 var main_crew* = "crew"
+
+# Dragons Information 
+var main_dragons* = "dragons"
 
 # Launches Information 
 var main_launches* = "launches"
