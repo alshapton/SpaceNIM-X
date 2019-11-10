@@ -1,11 +1,11 @@
 # SpaceX API wrapper in Nim
 <div align="center">
-<img src="https://github.com/alshapton/SpaceNIM-X/blob/master/nimrocket.png">
+<p align="center">
+<img src="https://github.com/alshapton/SpaceNIM-X/blob/master/nimrocket.png" width="30%" height="30%">
 
 ## Simple and Easy API Wrapper for [r-spacex/SpaceX-API](https://github.com/r-spacex/SpaceX-API)
 
-<br>
-
+</p>
 </div>
 
 ### Documentation
