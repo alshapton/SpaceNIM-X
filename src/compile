@@ -1,0 +1,2 @@
+nim compile -d:ssl --run spacenimx.nim
+
