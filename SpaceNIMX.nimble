@@ -5,6 +5,8 @@ author        = "Andrew Shapton"
 description   = "A Nim wrapper for the SpaceX API"
 license       = "MIT"
 srcDir        = "src"
+binDir        = "build"
+bin           = @["SpaceNIMX"]
 
 
 
