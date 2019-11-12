@@ -19,5 +19,5 @@ import httpClient
 
 proc crew*(tout = 1): string = 
     var client = newHttpClient()
-    return client.getContent(urldata.main & urldata.main_crew)
+    return client.getContent(urldata.main_crew)
 

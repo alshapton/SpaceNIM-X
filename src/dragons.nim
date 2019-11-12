@@ -19,8 +19,8 @@ import httpClient
 
 proc dragons*(tout = 1): string = 
     var client = newHttpClient()
-    return client.getContent(urldata.main & urldata.main_dragons)
+    return client.getContent(urldata.main_dragons)
 
 proc one*(dragon_id = "", tout = 1): string = 
     var client = newHttpClient()
-    return client.getContent(urldata.main & urldata.main_dragonss & "/" & dragon_id)
+    return client.getContent(urldata.main_dragons & "/" & dragon_id)

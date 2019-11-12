@@ -20,7 +20,7 @@ The usage of the wrapper is very easy. It does not require any initialisation. J
 ```nim
 import spacenimx
 
-rocket_data = spacenimx.rockets.falconHeavy()
+let rocket_data = spacenimx.rockets.falconHeavy()
 echo rocket_data
 ```
 

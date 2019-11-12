@@ -18,7 +18,7 @@ import httpClient
 
 proc company*(tout = 1): string =
     var client = newHttpClient()
-    return client.getContent(urldata.main & urldata.main_info)
+    return client.getContent(urldata.main_info)
     
 proc api*(tout = 1): string = 
     var client = newHttpClient()

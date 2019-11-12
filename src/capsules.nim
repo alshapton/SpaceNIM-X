@@ -20,17 +20,17 @@ import httpClient
 
 proc capsules*(tout = 1): string =
     var client = newHttpClient()
-    return client.getContent(urldata.main & urldata.main_capsules)
+    return client.getContent(urldata.main_capsules)
     
 proc upcoming*(tout = 1): string = 
     var client = newHttpClient()
-    return client.getContent(urldata.main & urldata.upcoming_capsules)
+    return client.getContent(urldata.upcoming_capsules)
 
 proc past*(tout = 1): string = 
     var client = newHttpClient()
-    return client.getContent(urldata.main & urldata.past_capsules)
+    return client.getContent(urldata.past_capsules)
 
 proc one*(capsule_id = "", tout = 1): string = 
     var client = newHttpClient()
-    return client.getContent(urldata.main & urldata.main_capsules & "/" & capsule_id)
+    return client.getContent(urldata.main_capsules & "/" & capsule_id)
 
