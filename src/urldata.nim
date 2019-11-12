@@ -51,10 +51,24 @@ var past_launches* = main & main_launches & "/past"
 # Launch Pads Information 
 var main_launchpads* = "launchpads"
 
+# Mission Information 
+var main_missions* = "missions"
+
+# Payload Information 
+var main_payloads* = "payloads"
+
+# Roadster Information 
+var main_roadster* = "roadster"
+
 # Rocket information #
 var main_rockets* = "rockets"
 var falcon1* = main & main_rockets & "/falcon1"
 var falcon9* = main & main_rockets & "/falcon9"
 var falconheavy* = main & main_rockets & "/falconheavy"
 var starship* = main & main_rockets & "/starship"
+
+# Ships Information
+var main_ships* = "ships"
+
+
 
