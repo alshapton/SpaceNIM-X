@@ -16,7 +16,7 @@ var main* = base & "/" & version & "/"
 # Declaration of the endpoints
 
 # Capsule Information 
-var main_capsules* = "capsules"
+var main_capsules* = main & "capsules"
 var upcoming_capsules* = main & main_capsules & "/upcoming"
 var past_capsules* = main & main_capsules & "/past"
 
@@ -25,7 +25,7 @@ var main_info* = main & "info"
 var main_api* = ""
 
 # Cores Information 
-var main_cores* = "cores"
+var main_cores* = main & "cores"
 var upcoming_cores* = main & main_cores & "/upcoming"
 var past_cores* = main & main_cores & "/past"
 
@@ -39,36 +39,36 @@ var main_dragons* = main & "dragons"
 var main_history* = main & "history"
 
 # Landing Pads Information
-var main_landingpads* = "landpads"
+var main_landingpads* = main & "landpads"
 
 # Launches Information 
-var main_launches* = "launches"
+var main_launches* = main & "launches"
 var latest_launches* = main & main_launches & "/latest"
 var next_launches* = main & main_launches & "/next"
 var upcoming_launches* = main & main_launches & "/upcoming"
 var past_launches* = main & main_launches & "/past"
 
 # Launch Pads Information 
-var main_launchpads* = "launchpads"
+var main_launchpads* = main & "launchpads"
 
 # Mission Information 
-var main_missions* = "missions"
+var main_missions* = main & "missions"
 
 # Payload Information 
-var main_payloads* = "payloads"
+var main_payloads* = main & "payloads"
 
 # Roadster Information 
-var main_roadster* = "roadster"
+var main_roadster* = main & "roadster"
 
 # Rocket information #
-var main_rockets* = "rockets"
+var main_rockets* = main & "rockets"
 var falcon1* = main & main_rockets & "/falcon1"
 var falcon9* = main & main_rockets & "/falcon9"
 var falconheavy* = main & main_rockets & "/falconheavy"
 var starship* = main & main_rockets & "/starship"
 
 # Ships Information
-var main_ships* = "ships"
+var main_ships* = main & "ships"
 
 
 

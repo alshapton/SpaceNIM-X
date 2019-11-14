@@ -13,3 +13,10 @@ bin           = @["SpaceNIMX"]
 # Dependencies
 
 requires "nim >= 1.0.2"
+
+when defined(nimdistros):
+  import distros
+  if detectOs(Ubuntu):
+    foreignDep "libssl-dev"
+  else:
+    foreignDep "openssl"

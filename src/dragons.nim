@@ -10,7 +10,6 @@ functions:
     * dragon - returns all dragon information
     * one - returns information about a specific dragon craft
 
-"""
 ]#
 
 import urldata

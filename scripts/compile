@@ -1,2 +1,2 @@
-cd ..
-nimble build
+cd ../src
+nim compile  --define:ssl --outdir:../build SpaceNIMX.nim 

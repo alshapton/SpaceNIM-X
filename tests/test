@@ -1,0 +1,2 @@
+cd ../tests
+nim c  -r  test_info.nim "SpaceX Fundamental Tests::*"

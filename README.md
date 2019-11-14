@@ -5,6 +5,8 @@
 
 ## Simple and Easy API Wrapper for [r-spacex/SpaceX-API](https://github.com/r-spacex/SpaceX-API)
 
+[![Build Status](https://travis-ci.com/alshapton/SpaceNIM-X.svg?branch=master)](https://travis-ci.com/alshapton/SpaceNIM-X)
+
 </p>
 </div>
 

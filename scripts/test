@@ -1,0 +1,2 @@
+cd ../tests
+echo "nim c  -r  test_info.nim "SpaceX Fundamental Tests::*"" | sh

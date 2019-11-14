@@ -10,7 +10,6 @@ functions:
     * history - returns all history information
     * one - returns information about a specific event
 
-"""
 ]#
 
 import urldata

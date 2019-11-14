@@ -33,4 +33,3 @@ proc past*(tout = 1): string =
 proc one*(capsule_id = "", tout = 1): string = 
     var client = newHttpClient()
     return client.getContent(urldata.main_capsules & "/" & capsule_id)
-

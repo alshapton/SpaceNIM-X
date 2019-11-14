@@ -12,7 +12,6 @@ functions:
     * landingpads - returns all landing pad information
     * one - returns information about a specific pad
 
-"""
 ]#
 
 import urldata

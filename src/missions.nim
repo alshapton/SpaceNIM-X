@@ -10,7 +10,6 @@ functions:
     * missions - returns all mission information
     * one - returns information about a specific mission
 
-"""
 ]#
 
 import urldata

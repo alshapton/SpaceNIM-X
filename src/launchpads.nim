@@ -11,7 +11,6 @@ functions:
     * launchpads - returns all launchpad information
     * one - returns information about a specific launchpad
 
-"""
 ]#
 
 import urldata
@@ -24,4 +23,4 @@ proc launchpads*(tout = 1): string =
 
 proc one*(pad = "", tout = 1): string = 
     var client = newHttpClient()
-    return client.getContent(urldata.main_launchpad & "/" & pad)
+    return client.getContent(urldata.main_launchpads & "/" & pad)
