@@ -1,2 +1,3 @@
-cd ../tests
-nim c  -r  test_info.nim "SpaceX Fundamental Tests::*"
+#!/bin/sh
+nim c  -r  test_info.nim 
+nim --version
