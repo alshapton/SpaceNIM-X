@@ -1,5 +1,5 @@
 import unittest 
-import info 
+import crew 
 
 suite "Crew Tests":
   echo "Testing: crew"
