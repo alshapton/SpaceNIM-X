@@ -1,3 +1,2 @@
 #!/bin/sh
 nim c  -r  test_info.nim 
-nim --version
