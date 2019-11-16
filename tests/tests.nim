@@ -1,4 +1,6 @@
 import unittest 
+import json
+
 import crew
 import info 
 
@@ -18,12 +20,16 @@ suite "SpaceX Fundamental Tests":
   
   test "api":
     let info_data = info.api(2)
+    let infoJSON = parseJson(info_data)
     check(info_data != "")
-    check("asd"[2] == 'd')
-  
+    check(infoJSON["project_name"].getStr() == "SpaceX-API")
+    
   test "company":
     let company_data = info.company(2)
+    let companyJSON = parseJson(company_data)
     check(company_data != "")
-    check("asd"[2] == 'd')
+    check(companyJSON["ceo"].getStr() == "Elon Musk")
+    check(companyJSON["coo"].getStr() == "Gwynne Shotwell")
+    check(companyJSON["founded"].getInt() == 2002)
       
 echo "End of suite: SpaceX Fundamental Tests"
