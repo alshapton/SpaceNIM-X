@@ -1,5 +1,16 @@
 import unittest 
+import crew
 import info 
+
+suite "Crew Tests":
+  echo "Testing: crew"
+  
+  test "Crew":
+    let crew_data = crew.crew(2)
+    check(crew_data != "")
+      
+echo "End of suite: Crew Tests"
+
 
 suite "SpaceX Fundamental Tests":
   echo "Testing: api"
@@ -15,4 +26,4 @@ suite "SpaceX Fundamental Tests":
     check(company_data != "")
     check("asd"[2] == 'd')
       
-  echo "End of suite: SpaceX Fundamental Tests"
+echo "End of suite: SpaceX Fundamental Tests"
