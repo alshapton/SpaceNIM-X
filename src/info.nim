@@ -14,12 +14,11 @@ functions:
 ]#
 
 import urldata
-import httpClient
+import utils
 
-proc company*(tout = 1): string =
-    var client = newHttpClient()
-    return client.getContent(urldata.main_info)
-    
-proc api*(tout = 1): string = 
-    var client = newHttpClient()
-    return client.getContent(urldata.main)
+
+proc company*(timeOut = 1): string =
+    return utils.makeRequest(urldata.main_info, timeOut)
+
+proc api*(timeOut = 1): string =
+    return utils.makeRequest(urldata.main, timeOut)

@@ -16,20 +16,17 @@ functions:
 ]#
 
 import urldata
-import httpClient
+import utils
 
-proc capsules*(tout = 1): string =
-    var client = newHttpClient()
-    return client.getContent(urldata.main_capsules)
-    
-proc upcoming*(tout = 1): string = 
-    var client = newHttpClient()
-    return client.getContent(urldata.upcoming_capsules)
+proc capsules*(timeOut = 1): string =
+    return utils.makeRequest(urldata.main_capsules, timeOut)
 
-proc past*(tout = 1): string = 
-    var client = newHttpClient()
-    return client.getContent(urldata.past_capsules)
+proc upcoming*(timeOut = 1): string =
+    return utils.makeRequest(urldata.upcoming_capsules, timeOut)
 
-proc one*(capsule_id = "", tout = 1): string = 
-    var client = newHttpClient()
-    return client.getContent(urldata.main_capsules & "/" & capsule_id)
+proc past*(timeOut = 1): string =
+    return utils.makeRequest(urldata.past_capsules, timeOut)
+
+proc one*(capsule_serial = "",timeOut = 1): string =
+    return utils.makeRequest(urldata.main_capsules & "/" & capsule_serial, timeOut)
+ 

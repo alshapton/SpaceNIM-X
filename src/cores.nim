@@ -16,21 +16,17 @@ functions:
 ]#
 
 import urldata
-import httpClient
+import utils
 
-proc cores*(tout = 1): string =
-    var client = newHttpClient()
-    return client.getContent(urldata.main_cores)
+proc cores*(timeOut = 1): string =
+    return utils.makeRequest(urldata.main_cores,timeOut)
     
-proc upcoming*(tout = 1): string = 
-    var client = newHttpClient()
-    return client.getContent(urldata.upcoming_cores)
+proc upcoming*(timeOut = 1): string = 
+    return utils.makeRequest(urldata.upcoming_cores,timeOut)
 
-proc past*(tout = 1): string = 
-    var client = newHttpClient()
-    return client.getContent(urldata.past_cores)
+proc past*(timeOut = 1): string = 
+    return utils.makeRequest(urldata.past_cores,timeOut)
 
-proc one*(core_id = "", tout = 1): string = 
-    var client = newHttpClient()
-    return client.getContent(urldata.main_cores & "/" & core_id)
+proc one*(core_serial = "", timeOut = 1): string = 
+    return utils.makeRequest(urldata.main_cores & "/" & core_serial,timeOut)
 

@@ -17,8 +17,8 @@ var main* = base & "/" & version & "/"
 
 # Capsule Information 
 var main_capsules* = main & "capsules"
-var upcoming_capsules* = main & main_capsules & "/upcoming"
-var past_capsules* = main & main_capsules & "/past"
+var upcoming_capsules* = main_capsules & "/upcoming"
+var past_capsules* =  main_capsules & "/past"
 
 # Company/API information 
 var main_info* = main & "info"
@@ -26,8 +26,8 @@ var main_api* = ""
 
 # Cores Information 
 var main_cores* = main & "cores"
-var upcoming_cores* = main & main_cores & "/upcoming"
-var past_cores* = main & main_cores & "/past"
+var upcoming_cores* = main_cores & "/upcoming"
+var past_cores* = main_cores & "/past"
 
 # Crew Information 
 var main_crew* = main & "crew"
