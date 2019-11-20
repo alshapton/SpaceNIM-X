@@ -14,10 +14,9 @@ functions:
 ]#
 
 import urldata
-import httpClient
+import utils
 
 
-proc crew*(tout = 1): string = 
-    var client = newHttpClient()
-    return client.getContent(urldata.main_crew)
+proc crew*(timeOut = 1): string = 
+    return utils.makeRequest(urldata.main_crew,timeOut)
 

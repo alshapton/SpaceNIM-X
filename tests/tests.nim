@@ -4,6 +4,8 @@ import json
 import capsules
 import cores
 import crew
+import dragons
+import history
 import info 
 
 suite "Crew Tests":
@@ -89,7 +91,6 @@ suite  "SpaceX Core Tests":
   test "upcoming":
     let upcoming_data = cores.upcoming(timeOut = 1)
     let upcomingJSON = parseJson(upcoming_data)
-    echo upcomingJSON
     check(upcoming_data != "")
     check(upcomingJSON[0]["status"].getStr() == "lost")
 
@@ -100,3 +101,48 @@ test "one":
     check(oneJson["block"].getInt() == 5)
       
 echo "End of suite: SpaceX Capsule Tests"
+
+suite  "SpaceX Crew Tests":
+  echo "Testing: crew"
+
+  test "crew":
+    let crew_data = crew.crew(timeOut = 1)
+    check(crew_data == "[]")
+    
+echo "End of suite: SpaceX Crew Tests"
+
+suite  "SpaceX Dragon Tests":
+  echo "Testing: dragons"
+  echo "         one"
+
+  test "dragons":
+    let dragons_data = dragons.dragons(timeOut = 1)
+    let dragonsJSON = parseJson(dragons_data)
+    check(dragons_data != "")
+    check(dragonsJSON[0]["thrusters"][0]["fuel_1"].getStr() == "nitrogen tetroxide")
+    
+test "one":
+    let one_data = dragons.one(dragon_id = "dragon1", timeOut = 1)
+    let oneJSON = parseJson(one_data)
+    check(one_data != "")
+    check(oneJSON["thrusters"][0]["amount"].getInt() == 18)
+
+echo "End of suite: SpaceX Dragon Tests"
+
+suite  "SpaceX History Tests":
+  echo "Testing: history"
+  echo "         one"
+
+  test "history":
+    let history_data = history.history(timeOut = 1)
+    let historyJSON = parseJson(history_data)
+    check(history_data != "")
+    check(historyJSON[2]["flight_number"].getInt() == 5)
+    
+test "one":
+    let one_data = history.one(event = 10, timeOut = 1)
+    let oneJSON = parseJson(one_data)
+    check(one_data != "")
+    check(oneJSON["event_date_unix"].getInt() == 1398992400)
+
+echo "End of suite: SpaceX History Tests"

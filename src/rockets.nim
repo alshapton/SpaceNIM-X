@@ -11,7 +11,6 @@ functions:
     * all - returns all rockets
     * rocket - returns information about one rocket rocket type
 
-
     * falcon1 - returns information about the Falcon 1
     * falcon9 - returns information about the Falcon 9
     * falconheavy - returns information about the Falcon Heavy

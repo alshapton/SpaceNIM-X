@@ -13,13 +13,11 @@ functions:
 ]#
 
 import urldata
-import httpClient
+import utils
 
 
-proc dragons*(tout = 1): string = 
-    var client = newHttpClient()
-    return client.getContent(urldata.main_dragons)
+proc dragons*(timeOut = 1): string = 
+    return utils.makeRequest(urldata.main_dragons,timeOut)
 
-proc one*(dragon_id = "", tout = 1): string = 
-    var client = newHttpClient()
-    return client.getContent(urldata.main_dragons & "/" & dragon_id)
+proc one*(dragon_id = "", timeOut = 1): string = 
+    return utils.makeRequest(urldata.main_dragons & "/" & dragon_id,timeOut)

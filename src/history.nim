@@ -13,13 +13,11 @@ functions:
 ]#
 
 import urldata
-import httpClient
+import utils
 
 
-proc history*(tout = 1): string = 
-    var client = newHttpClient()
-    return client.getContent(urldata.main_history)
+proc history*(timeOut = 1): string = 
+    return utils.makeRequest(urldata.main_history,timeOut)
 
-proc one*(event = "", tout = 1): string = 
-    var client = newHttpClient()
-    return client.getContent(urldata.main_history & "/" & event)
+proc one*(event = 0, timeOut = 1): string = 
+    return utils.makeRequest(urldata.main_history & "/" & $event,timeOut)
