@@ -14,13 +14,11 @@ functions:
 ]#
 
 import urldata
-import httpClient
+import utils
 
 
-proc payloads*(tout = 1): string = 
-    var client = newHttpClient()
-    return client.getContent(urldata.main_payloads)
+proc payloads*(timeOut = 1): string = 
+    return utils.makeRequest(urldata.main_payloads, timeOut)
 
-proc one*(payload_id = "", tout = 1): string = 
-    var client = newHttpClient()
-    return client.getContent(urldata.main_payloads & "/" & payload_id)
+proc one*(payload_id = "", timeOut = 1): string = 
+    return utils.makeRequest(urldata.main_payloads & "/" & payload_id, timeOut)

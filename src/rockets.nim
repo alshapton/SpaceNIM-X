@@ -18,32 +18,25 @@ functions:
 ]#
 
 import urldata
-import httpClient
+import utils
 
 
-proc all*(tout = 1): string = 
-    var client = newHttpClient()
-    return client.getContent(urldata.main_rockets)
+proc all*(timeOut = 1): string = 
+    return utils.makeRequest(urldata.main_rockets, timeOut)
 
-proc rocket*(rocket_id = "", tout = 1): string = 
-    var client = newHttpClient()
-    return client.getContent(urldata.main_rockets & "/" & rocket_id)
+proc rocket*(rocket_id = "", timeOut = 1): string = 
+    return utils.makeRequest(urldata.main_rockets & "/" & rocket_id, timeOut)
 
-proc falcon1*(tout = 1): string = 
-    var client = newHttpClient()
-    return client.getContent(urldata.falcon1)
+proc falcon1*(timeOut = 1): string = 
+    return utils.makeRequest(urldata.falcon1, timeOut)
 
-proc falcon9*(tout = 1): string = 
-    var client = newHttpClient()
-    return client.getContent(urldata.falcon9)
+proc falcon9*(timeOut = 1): string = 
+    return utils.makeRequest(urldata.falcon9, timeOut)
 
-proc falconheavy*(tout = 1): string = 
-    var client = newHttpClient()
-    return client.getContent(urldata.falconheavy)
+proc falconheavy*(timeOut = 1): string = 
+    return utils.makeRequest(urldata.falconheavy, timeOut)
 
-proc starship*(tout = 1): string = 
-    var client = newHttpClient()
-    return client.getContent(urldata.starship)
-
+proc starship*(timeOut = 1): string = 
+    return utils.makeRequest(urldata.starship, timeOut)
 
 

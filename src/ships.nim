@@ -18,29 +18,23 @@ functions:
 ]#
 
 import urldata
-import httpClient
+import utils
 
 
-proc ships*(tout = 1): string = 
-    var client = newHttpClient()
-    return client.getContent(urldata.main_ships)
+proc ships*(timeOut = 1): string = 
+    return utils.makeRequest(urldata.main_ships, timeOut)
 
-proc one*(ship_id = "", tout = 1): string = 
-    var client = newHttpClient()
-    return client.getContent(urldata.main_ships & "/" & ship_id)
+proc one*(ship_id = "", timeOut = 1): string = 
+    return utils.makeRequest(urldata.main_ships& "/" & ship_id, timeOut)
 
-proc ocisly*(tout = 1): string = 
-    var client = newHttpClient()
-    return client.getContent(urldata.main_ships & "/" & "OCISLY")
+proc ocisly*(timeOut = 1): string = 
+    return utils.makeRequest(urldata.main_ships & "/" & "OCISLY", timeOut)
 
-proc jrti1*(tout = 1): string = 
-    var client = newHttpClient()
-    return client.getContent(urldata.main_ships & "/" & "JRTI-1")
+proc jrti1*(timeOut = 1): string = 
+    return utils.makeRequest(urldata.main_ships & "/" & "JRTI-1", timeOut)
 
-proc jrti2*(tout = 1): string = 
-    var client = newHttpClient()
-    return client.getContent(urldata.main_ships & "/" & "JRTI-2")
+proc jrti2*(timeOut = 1): string = 
+    return utils.makeRequest(urldata.main_ships & "/" & "JRTI-2", timeOut)
 
-proc asog*(tout = 1): string = 
-    var client = newHttpClient()
-    return client.getContent(urldata.main_ships & "/" & "ASOG")
+proc asog*(timeOut = 1): string = 
+    return utils.makeRequest(urldata.main_ships & "/" & "ASOG", timeOut)

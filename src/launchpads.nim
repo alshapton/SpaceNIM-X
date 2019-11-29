@@ -14,13 +14,13 @@ functions:
 ]#
 
 import urldata
-import httpClient
+import utils
 
 
-proc launchpads*(tout = 1): string = 
-    var client = newHttpClient()
-    return client.getContent(urldata.main_launchpads)
+proc launchpads*(timeOut = 1): string = 
+    return utils.makeRequest(urldata.main_launchpads, timeOut)
 
-proc one*(pad = "", tout = 1): string = 
-    var client = newHttpClient()
-    return client.getContent(urldata.main_launchpads & "/" & pad)
+proc one*(pad = "", timeOut = 1): string = 
+    return utils.makeRequest(urldata.main_launchpads & "/" & pad, timeOut)
+
+    

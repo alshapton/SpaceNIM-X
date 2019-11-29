@@ -43,10 +43,10 @@ var main_landingpads* = main & "landpads"
 
 # Launches Information 
 var main_launches* = main & "launches"
-var latest_launches* = main & main_launches & "/latest"
-var next_launches* = main & main_launches & "/next"
-var upcoming_launches* = main & main_launches & "/upcoming"
-var past_launches* = main & main_launches & "/past"
+var latest_launches* = main_launches & "/latest"
+var next_launches* = main_launches & "/next"
+var upcoming_launches* = main_launches & "/upcoming"
+var past_launches* = main_launches & "/past"
 
 # Launch Pads Information 
 var main_launchpads* = main & "launchpads"
@@ -62,10 +62,10 @@ var main_roadster* = main & "roadster"
 
 # Rocket information #
 var main_rockets* = main & "rockets"
-var falcon1* = main & main_rockets & "/falcon1"
-var falcon9* = main & main_rockets & "/falcon9"
-var falconheavy* = main & main_rockets & "/falconheavy"
-var starship* = main & main_rockets & "/starship"
+var falcon1* = main_rockets & "/falcon1"
+var falcon9* = main_rockets & "/falcon9"
+var falconheavy* = main_rockets & "/falconheavy"
+var starship* = main_rockets & "/starship"
 
 # Ships Information
 var main_ships* = main & "ships"

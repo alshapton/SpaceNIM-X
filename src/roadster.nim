@@ -13,9 +13,8 @@ function:
 ]#
 
 import urldata
-import httpClient
+import utils
 
+proc roadster*(timeOut = 1): string = 
+    return utils.makeRequest(urldata.main_roadster, timeOut)
 
-proc roadster*(tout = 1): string = 
-    var client = newHttpClient()
-    return client.getContent(urldata.main_roadster)

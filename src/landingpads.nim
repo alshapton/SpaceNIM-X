@@ -15,13 +15,11 @@ functions:
 ]#
 
 import urldata
-import httpClient
+import utils
 
 
-proc landingpads*(tout = 1): string = 
-    var client = newHttpClient()
-    return client.getContent(urldata.main_landingpads)
+proc landingpads*(timeOut = 1): string = 
+    return utils.makeRequest(urldata.main_landingpads,timeOut)
 
-proc one*(pad = "", tout = 1): string = 
-    var client = newHttpClient()
-    return client.getContent(urldata.main_landingpads & "/" & pad)
+proc one*(pad = "", timeOut = 1): string = 
+    return utils.makeRequest(urldata.main_landingpads & "/" & pad,timeOut)

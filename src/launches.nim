@@ -18,29 +18,22 @@ functions:
 ]#
 
 import urldata
-import httpClient
+import utils
 
-proc alllaunches*(tout = 1): string =
-    var client = newHttpClient()
-    return client.getContent(urldata.main_launches)
+proc alllaunches*(timeOut = 1): string =
+    return utils.makeRequest(urldata.main_launches, timeOut)
     
-proc latest*(tout = 1): string = 
-    var client = newHttpClient()
-    return client.getContent(urldata.upcoming_launches)
+proc latest*(timeOut = 1): string = 
+    return utils.makeRequest(urldata.latest_launches, timeOut)
 
-proc nextlaunch*(tout = 1): string = 
-    var client = newHttpClient()
-    return client.getContent(urldata.next_launches)
+proc nextlaunch*(timeOut = 1): string = 
+    return utils.makeRequest(urldata.next_launches, timeOut)
+ 
+proc upcoming*(timeOut = 1): string = 
+    return utils.makeRequest(urldata.upcoming_launches, timeOut)
 
-proc upcoming*(tout = 1): string = 
-    var client = newHttpClient()
-    return client.getContent(urldata.upcoming_launches)
+proc past*(timeOut = 1): string = 
+    return utils.makeRequest(urldata.past_launches, timeOut)
 
-proc past*(tout = 1): string = 
-    var client = newHttpClient()
-    return client.getContent(urldata.past_launches)
-
-proc one*(launch_id = "", tout = 1): string = 
-    var client = newHttpClient()
-    return client.getContent(urldata.main_launches & "/" & launch_id)
-
+proc one*(launch_id = 0, timeOut = 1): string = 
+    return utils.makeRequest(urldata.main_launches & "/" & $launch_id, timeOut)
