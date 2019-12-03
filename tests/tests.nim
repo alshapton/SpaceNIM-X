@@ -208,7 +208,7 @@ suite "SpaceX Launch Tests":
   echo "         one"
 
   test "alllaunches":
-    let launches_data = launches.alllaunches(timeOut = 1)
+    let launches_data = launches.alllaunches(timeOut = 5)
     let launchesJSON = parseJson(launches_data)
     check(launches_data != "")
     check(launchesJSON[0]["launch_date_local"].getStr() == "2006-03-25T10:30:00+12:00")
