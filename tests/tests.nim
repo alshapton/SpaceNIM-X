@@ -321,7 +321,7 @@ suite  "SpaceX Rockets Tests":
       check(oneJSON["engines"]["number"].getInt() == 9)
 
   test "falcon1":
-    let one_data = rockets.falcon1( timeOut = 1)
+    let one_data = rockets.falcon1(timeOut = 1)
     let oneJSON = parseJson(one_data)
     check(one_data != "")
     check(oneJSON["cost_per_launch"].getInt() == 6700000)

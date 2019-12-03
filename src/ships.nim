@@ -25,7 +25,7 @@ proc ships*(timeOut = 1): string =
     return utils.makeRequest(urldata.main_ships, timeOut)
 
 proc one*(ship_id = "", timeOut = 1): string = 
-    return utils.makeRequest(urldata.main_ships& "/" & ship_id, timeOut)
+    return utils.makeRequest(urldata.main_ships & "/" & ship_id, timeOut)
 
 proc ocisly*(timeOut = 1): string = 
     return utils.makeRequest(urldata.main_ships & "/" & "OCISLY", timeOut)
