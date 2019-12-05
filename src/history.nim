@@ -21,3 +21,5 @@ proc history*(timeOut = 1): string =
 
 proc one*(event = 0, timeOut = 1): string = 
     return utils.makeRequest(urldata.main_history & "/" & $event,timeOut)
+
+
