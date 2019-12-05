@@ -1,0 +1,1 @@
+nim -d:ssl c XXXX.nim - need to be compiled with SSL enabled.

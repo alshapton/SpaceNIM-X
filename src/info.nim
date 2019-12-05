@@ -16,9 +16,16 @@ functions:
 import urldata
 import utils
 
-
 proc company*(timeOut = 1): string =
     return utils.makeRequest(urldata.main_info, timeOut)
 
 proc api*(timeOut = 1): string =
     return utils.makeRequest(urldata.main, timeOut)
+
+when isMainModule:  #Preserve ability to `import info`/call from Nim
+    import cligen
+    dispatchMulti(["multi",doc="\nGeneral information about the SpaceX organisation and the API\n\n"],
+                    [company,doc = "Information about the SpaceX company", help={"timeOut": "Timeout in seconds"}],
+                    [api,doc = "Information about the API in use",help={"timeOut": "Timeout in seconds"}])
+
+
