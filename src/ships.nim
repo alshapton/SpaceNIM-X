@@ -9,7 +9,7 @@ This file is imported as a module and contains the following
 functions:
 
     * ships - returns all ship information
-    * one - returns information about a specific ship
+    * ship - returns information about a specific ship
 
     * ocisly - returns information about the drone ship "Of Course I Still Love You"
     * jrti1 - returns information about the drone ship "Just Read The Instructions" (iteration 1)
@@ -21,10 +21,10 @@ import urldata
 import utils
 
 
-proc ships*(timeOut = 1): string = 
+proc allships*(timeOut = 1): string = 
     return utils.makeRequest(urldata.main_ships, timeOut)
 
-proc one*(ship_id = "", timeOut = 1): string = 
+proc ship*(ship_id = "", timeOut = 1): string = 
     return utils.makeRequest(urldata.main_ships & "/" & ship_id, timeOut)
 
 proc ocisly*(timeOut = 1): string = 

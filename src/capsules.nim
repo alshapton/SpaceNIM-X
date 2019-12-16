@@ -8,25 +8,25 @@ SpaceX's fleet
 This file is imported as a module and contains the following
 functions:
 
-    * capsules - returns all capsules
-    * upcoming - returns information about upcoming capsules
-    * past - returns information about past capsules
-    * one - returns information about a specific capsule
+    * allcapsules - returns all capsules
+    * upcomingcapsules - returns information about upcoming capsules
+    * pastcapsules - returns information about past capsules
+    * capsule - returns information about a specific capsule
 
 ]#
 
 import urldata
 import utils
 
-proc capsules*(timeOut = 1): string =
+proc allcapsules*(timeOut = 1): string =
     return utils.makeRequest(urldata.main_capsules, timeOut)
 
-proc upcoming*(timeOut = 1): string =
+proc upcomingcapsules*(timeOut = 1): string =
     return utils.makeRequest(urldata.upcoming_capsules, timeOut)
 
-proc past*(timeOut = 1): string =
+proc pastcapsules*(timeOut = 1): string =
     return utils.makeRequest(urldata.past_capsules, timeOut)
 
-proc one*(capsule_serial = "",timeOut = 1): string =
+proc capsule*(capsule_serial = "",timeOut = 1): string =
     return utils.makeRequest(urldata.main_capsules & "/" & capsule_serial, timeOut)
  
