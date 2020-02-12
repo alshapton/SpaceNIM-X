@@ -32,7 +32,7 @@ Jake Meyer's [r-spacex/SpaceX-API](https://github.com/r-spacex/SpaceX-API)
 ### License
 
 ## Contributing
-If you would like to contribute, then first of all - "Thanks !!!" - second of all, please read the ever-evolving and improving guidelines [here](https://github.com/alshapton/SpacePY-X/blob/master/CONTRIBUTING.md)
+If you would like to contribute, then first of all - "Thanks !!!" - second of all, please read the ever-evolving and improving guidelines [here](https://github.com/alshapton/SpaceNIM-X/blob/master/CONTRIBUTING.md) 
 
  
 This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
