@@ -73,31 +73,31 @@ suite "SpaceX Fundamental Tests":
 echo "End of suite: SpaceX Fundamental Tests"
 
 suite "SpaceX Capsule Tests":
-  echo "Testing: capsules"
-  echo "         past"
-  echo "         upcoming"
-  echo "         one"
+  echo "Testing: allcapsules"
+  echo "         pastcapsules"
+  echo "         upcomingcapsules"
+  echo "         capsule"
 
-  test "capsules":
-    let capsules_data = capsules.capsules(timeOut = 1)
+  test "allcapsules":
+    let capsules_data = capsules.allcapsules(timeOut = 1)
     let capsulesJSON = parseJson(capsules_data)
     check(capsules_data != "")
     check(capsulesJSON[0]["capsule_id"].getStr() == "dragon1")
     
-  test "past":
-    let past_data = capsules.past(timeOut = 1)
+  test "pastcapsules":
+    let past_data = capsules.pastcapsules(timeOut = 1)
     let pastJSON = parseJson(past_data)
     check(past_data != "")
     check(pastJSON[1]["missions"][0]["name"].getStr() == "COTS 2")
     
-  test "upcoming":
-    let upcoming_data = capsules.upcoming(timeOut = 1)
+  test "upcomingcapsules":
+    let upcoming_data = capsules.upcomingcapsules(timeOut = 1)
     let upcomingJSON = parseJson(upcoming_data)
     check(upcoming_data != "")
     check(upcomingJSON[0]["type"].getStr() == "Dragon 2.0")
 
-test "one":
-    let one_data = capsules.one(capsule_serial = "C112", timeOut = 1)
+test "capsule":
+    let one_data = capsules.capsule(capsule_serial = "C112", timeOut = 1)
     let oneJSON = parseJson(one_data)
     check(one_data != "")
     check(oneJson["type"].getStr() == "Dragon 1.1")
@@ -126,7 +126,7 @@ suite  "SpaceX Core Tests":
     let upcoming_data = cores.upcoming(timeOut = 1)
     let upcomingJSON = parseJson(upcoming_data)
     check(upcoming_data != "")
-    check(upcomingJSON[0]["status"].getStr() == "lost")
+    check(upcomingJSON[0]["status"].getStr() == "upcoming")
 
 test "one":
     let one_data = cores.one(core_serial = "B1051", timeOut = 1)
@@ -189,7 +189,7 @@ suite  "SpaceX Landingpads Tests":
     let landingpads_data = landingpads.landingpads(timeOut = 1)
     let landingpadsJSON = parseJson(landingpads_data)
     check(landingpads_data != "")
-    check(landingpadsJSON[3]["location"]["name"].getStr() == "Vandenberg Air Force Base")
+    check(landingpadsJSON[3]["location"]["name"].getStr() == "Port Canaveral")
     
 test "one":
     let one_data = landingpads.one(pad = "LZ-4", timeOut = 1)
@@ -290,7 +290,7 @@ suite  "SpaceX Payload Tests":
     let payloads_data = payloads.payloads(timeOut = 1)
     let payloadsJSON = parseJson(payloads_data)
     check(payloads_data != "")
-    check(payloadsJSON[len(payloadsJSON)-1]["payload_id"].getStr() == "Smallsat SSO Rideshare 2 (Mission 9)")
+    check(payloadsJSON[len(payloadsJSON)-1]["payload_id"].getStr() == "USCV-1 (NASA Crew Flight 1)")
     
   test "one":
       let one_data = payloads.one(payload_id = "Telkom-4", timeOut = 1)
@@ -358,21 +358,21 @@ suite  "SpaceX Roadster Test":
 echo "End of suite: SpaceX Roadster Test"
 
 suite  "SpaceX Ships Tests":
-  echo "Testing: ships"
-  echo "         one"
+  echo "Testing: allships"
+  echo "         ship"
   echo "         ocisly"
   echo "         jrti1"
   echo "         jrti2"
   echo "         asog"
 
-  test "ships":
-    let ships_data = ships.ships(timeOut = 1)
+  test "allships":
+    let ships_data = ships.allships(timeOut = 1)
     let shipsJSON = parseJson(ships_data)
     check(ships_data != "")
     check(shipsJSON[0]["missions"][0]["name"].getStr() == "COTS 1")
       
-  test "one":
-      let one_data = ships.one(ship_id = "GONAVIGATOR", timeOut = 1)
+  test "ship":
+      let one_data = ships.ship(ship_id = "GONAVIGATOR", timeOut = 1)
       let oneJSON = parseJson(one_data)
       check(one_data != "")
       check(oneJSON["roles"][1].getStr() == "Fairing Recovery")
